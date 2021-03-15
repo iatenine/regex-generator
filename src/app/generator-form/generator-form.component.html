@@ -1,0 +1,48 @@
+<form [formGroup]='myForm' (ngSubmit)='onSubmit()'>
+<div>
+    <label>
+        Does Not
+    </label>
+    <input formControlName='doesNot' type='checkbox'>
+    
+    <label>
+        Expression (do not include brackets)
+    </label>
+    <input formControlName='expression'>
+    
+    <label>
+        Starts With
+    </label>
+    <input formControlName='startsWith' type='checkbox'>
+
+    <label>
+        Ends With
+    </label>
+    <input formControlName='endsWith' type='checkbox'>
+
+    <label>
+        Ignore Case
+    </label>
+    <input formControlName='ignoreCase' type='checkbox'>
+
+    <label>
+        MultiLine
+    </label>
+    <input formControlName='multiline' type='checkbox'>
+
+    <label>
+        Global
+    </label>
+    <input formControlName='isGlobal' type='checkbox'>
+
+</div>
+<button type='reset'>Reset</button>
+<button type="submit">Generate Regex</button>
+</form>
+
+<div>
+    <button (click)="clearList()" type="button">Clear List</button>
+    <span *ngFor='let element of expressionList'>
+        {{ element }}
+    </span>
+</div>
